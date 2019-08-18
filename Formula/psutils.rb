@@ -3,26 +3,23 @@ require_relative "custom_download_strategy"
 class Psutils < Formula
   desc "Helper for common task."
   homepage "https://github.com/psmarcin/psutils/"
-  version "0.5.1"
+  version "0.5.2"
   bottle :unneeded
 
   if OS.mac?
-    url "http://github.com/psmarcin/psutils/releases/v0.5.1/psutils_0.5.1_Darwin_x86_64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
-    sha256 "b0bde28d23dbab7bd1f4daf1295363a3fea1d7440af0d29666dcef672504b51c"
+    url "http://github.com/psmarcin/psutils/releases/v0.5.2/psutils_0.5.2_Darwin_x86_64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
+    sha256 "b4a1253ed095a0b44007780e84664950768ca4cd01d6ade768bcb517adf3b1c5"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "http://github.com/psmarcin/psutils/releases/v0.5.1/psutils_0.5.1_Linux_x86_64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "f290ca8ca4340e2cb6ee96ecb4869cb1da78a6dde3ac549678d3cb69347a365d"
+      url "http://github.com/psmarcin/psutils/releases/v0.5.2/psutils_0.5.2_Linux_x86_64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "a060738f2481db23dd458618baa44b1371a5366c0a1a9c8ae5ba1676e5852466"
     end
   end
   
-  depends_on "git"
-  depends_on "zsh"
-  depends_on "go"
+  depends_on "bash"
 
   def install
     bin.install "program"
-    ...
   end
 
   def caveats; <<~EOS
@@ -34,13 +31,11 @@ class Psutils < Formula
 
   def plist; <<~EOS
     <?xml version="1.0" encoding="UTF-8"?>
-...
 
   EOS
   end
 
   test do
     system "#{bin}/program --version"
-    ...
   end
 end
