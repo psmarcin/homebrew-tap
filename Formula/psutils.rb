@@ -2,21 +2,21 @@
 class Psutils < Formula
   desc "Helper for common task."
   homepage "https://github.com/psmarcin/psutils/"
-  version "0.5.5"
+  version "0.5.6"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/psmarcin/psutils/releases/download/v0.5.5/psutils_0.5.5_Darwin_x86_64.tar.gz"
-    sha256 "003c1ec8a0a2849e491d330e8b859140e011157d3b9a671e338283e5a0037b65"
+    url "https://github.com/psmarcin/psutils/releases/download/v0.5.6/psutils_0.5.6_Darwin_x86_64.tar.gz"
+    sha256 "949c3b4dcc718ceb4fcdc921f2e57cc19281ed51fc1bb04491ad15115a7eaca8"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/psmarcin/psutils/releases/download/v0.5.5/psutils_0.5.5_Linux_x86_64.tar.gz"
-      sha256 "00d001a2c364ea4990468bdb910a854d3dcc4332da66248e01b1845ec7243fae"
+      url "https://github.com/psmarcin/psutils/releases/download/v0.5.6/psutils_0.5.6_Linux_x86_64.tar.gz"
+      sha256 "5e4a1adfd2b8faa509af5025cfe08212e0169b401e886ad3a1f811d7b5505499"
     end
   end
 
   def install
-    bin.install "program"
+    bin.install "psutils"
   end
 
   def caveats; <<~EOS
@@ -25,6 +25,6 @@ class Psutils < Formula
   end
 
   test do
-    system "#{bin}/program --version"
+    system "#{bin}/psutils --version"
   end
 end
