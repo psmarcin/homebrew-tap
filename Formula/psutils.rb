@@ -2,20 +2,18 @@
 class Psutils < Formula
   desc "Helper for common task."
   homepage "https://github.com/psmarcin/psutils/"
-  version "0.5.3"
+  version "0.5.4"
   bottle :unneeded
 
   if OS.mac?
-    url "http://github.com/psmarcin/psutils/releases/v0.5.3/psutils_0.5.3_Darwin_x86_64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
-    sha256 "354f09d570a0f6251c781e165cb3ee81965edfa87d680ac4d85603437e66ac54"
+    url "http://github.com/psmarcin/psutils/releases/v0.5.4/psutils_0.5.4_Darwin_x86_64.tar.gz"
+    sha256 "bff3538435af89fbd9a9c7229a35e82a44312fe72e8fa562f8dddf85f0a5734c"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "http://github.com/psmarcin/psutils/releases/v0.5.3/psutils_0.5.3_Linux_x86_64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "ce48c6c7a294168fbbeaf77283a600ba27fef686fffa4c728d7a18dc1ec90b8b"
+      url "http://github.com/psmarcin/psutils/releases/v0.5.4/psutils_0.5.4_Linux_x86_64.tar.gz"
+      sha256 "478c5013da3b22d0176eb8949ab6037976944f65c1920985f4b517721e46ee9b"
     end
   end
-  
-  depends_on "bash"
 
   def install
     bin.install "program"
@@ -23,14 +21,6 @@ class Psutils < Formula
 
   def caveats; <<~EOS
     psutils --help for usage information
-  EOS
-  end
-
-  plist_options :startup => false
-
-  def plist; <<~EOS
-    <?xml version="1.0" encoding="UTF-8"?>
-
   EOS
   end
 
