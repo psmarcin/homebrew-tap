@@ -2,16 +2,16 @@
 class Psutils < Formula
   desc "Helper for common task."
   homepage "https://github.com/psmarcin/psutils/"
-  version "0.6.0"
+  version "0.7.0"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/psmarcin/psutils/releases/download/v0.6.0/psutils_0.6.0_Darwin_x86_64.tar.gz"
-    sha256 "7e923e3dd7d57ffb55a9a540ea7fd22aa3f332719419251cd038c1421fb4feff"
+    url "https://github.com/psmarcin/psutils/releases/download/v0.7.0/psutils_0.7.0_Darwin_x86_64.tar.gz"
+    sha256 "4ea207fc55d5b7bc0f880723ef7d6b4f1e2ba77b08b3d986e7a6a98b6d180f2e"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/psmarcin/psutils/releases/download/v0.6.0/psutils_0.6.0_Linux_x86_64.tar.gz"
-      sha256 "b1ec1b4e87867a4548b298587de77194b0248f3622d04cb998389bf9749b4d11"
+      url "https://github.com/psmarcin/psutils/releases/download/v0.7.0/psutils_0.7.0_Linux_x86_64.tar.gz"
+      sha256 "f14629869f92c857222df24c89e3c12fe88902e932a4b23ef665b51aa0ecda30"
     end
   end
 
